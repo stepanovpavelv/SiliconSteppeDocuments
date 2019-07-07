@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.DB",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.Model", "SiliconSteppeDocuments.Model\SiliconSteppeDocuments.Model.csproj", "{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.API", "SiliconSteppeDocuments.API\SiliconSteppeDocuments.API.csproj", "{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.Common", "SiliconSteppeDocuments.Common\SiliconSteppeDocuments.Common.csproj", "{2E2280AA-539E-47CE-A205-33332D31E722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconSteppeDocuments.Common", "SiliconSteppeDocuments.Common\SiliconSteppeDocuments.Common.csproj", "{2E2280AA-539E-47CE-A205-33332D31E722}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconSteppeDocuments.API", "SiliconSteppeDocuments.WorkAPI\SiliconSteppeDocuments.API.csproj", "{517FDE77-C65B-4572-9159-4C4D2444D942}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E2280AA-539E-47CE-A205-33332D31E722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E2280AA-539E-47CE-A205-33332D31E722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E2280AA-539E-47CE-A205-33332D31E722}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E2280AA-539E-47CE-A205-33332D31E722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517FDE77-C65B-4572-9159-4C4D2444D942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517FDE77-C65B-4572-9159-4C4D2444D942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517FDE77-C65B-4572-9159-4C4D2444D942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517FDE77-C65B-4572-9159-4C4D2444D942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
