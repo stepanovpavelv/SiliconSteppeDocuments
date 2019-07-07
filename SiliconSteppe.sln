@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.DB", "SiliconSteppeDocuments.DB\SiliconSteppeDocuments.DB.csproj", "{AB2C606D-5CCC-43D2-856E-486A192D1293}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.Model", "SiliconSteppeDocuments.Model\SiliconSteppeDocuments.Model.csproj", "{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiliconSteppeDocuments.API", "SiliconSteppeDocuments.API\SiliconSteppeDocuments.API.csproj", "{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconSteppeDocuments.Common", "SiliconSteppeDocuments.Common\SiliconSteppeDocuments.Common.csproj", "{2E2280AA-539E-47CE-A205-33332D31E722}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB2C606D-5CCC-43D2-856E-486A192D1293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2C606D-5CCC-43D2-856E-486A192D1293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2C606D-5CCC-43D2-856E-486A192D1293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2C606D-5CCC-43D2-856E-486A192D1293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5F2733-F4DB-4B10-A96D-43DFD817DF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15A79CF-D90A-446F-BF7A-A0A8EB5838ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2280AA-539E-47CE-A205-33332D31E722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2280AA-539E-47CE-A205-33332D31E722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2280AA-539E-47CE-A205-33332D31E722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2280AA-539E-47CE-A205-33332D31E722}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D140894-EF41-446D-815A-079ECF2AB148}
+	EndGlobalSection
+EndGlobal
