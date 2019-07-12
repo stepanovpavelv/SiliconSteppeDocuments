@@ -10,7 +10,7 @@ namespace SiliconSteppeDocuments.Model
     {
         public long ID { get; set; }
 
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
 
         public long UserID { get; set; }
 

@@ -11,11 +11,11 @@ namespace SiliconSteppeDocuments.Model
 
         public DateTime EventDate { get; set; }
 
-        public User RateUser { get; set; }
+        public ApplicationUser RateUser { get; set; }
 
         public long RateUserID { get; set; }
 
-        public User FromUser { get; set; }
+        public ApplicationUser FromUser { get; set; }
 
         public long FromUserID { get; set; }
 

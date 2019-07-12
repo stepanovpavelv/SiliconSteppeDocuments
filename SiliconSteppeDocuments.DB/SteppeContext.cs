@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SiliconSteppeDocuments.Model;
 
 namespace SiliconSteppeDocuments.DB
 {
-    public class SteppeContext : DbContext
+    public class SteppeContext : IdentityDbContext<ApplicationUser, ApplicationRole, long, UserClaim, UserRole, UserLogin, UserRoleClaim, UserToken>
     {
         public SteppeContext(DbContextOptions<SteppeContext> options) : base(options)
         {
@@ -18,7 +19,6 @@ namespace SiliconSteppeDocuments.DB
         public DbSet<OrganizationType> OrganizationTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Department> Departments { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<InspectionType> InspectionTypes { get; set; }
         public DbSet<Questionnaire> Questionnaires { get; set; }
         public DbSet<Question> Questions { get; set; }

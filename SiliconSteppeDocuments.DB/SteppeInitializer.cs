@@ -1,6 +1,4 @@
-﻿using SiliconSteppeDocuments.Common.Helpers;
-using SiliconSteppeDocuments.Model;
-using System;
+﻿using SiliconSteppeDocuments.Model;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,8 +15,6 @@ namespace SiliconSteppeDocuments.DB
             CreateOrganizations(context);
 
             CreateDepartments(context);
-
-            CreateUsers(context);
         }
         
         private static void CreateOrganizationTypes(SteppeContext context)
@@ -61,46 +57,6 @@ namespace SiliconSteppeDocuments.DB
                 new Department { Name = "Кухня", OrganizationID = organization.ID }
             };
             context.Departments.AddRange(items);
-            context.SaveChanges();
-        }
-
-        private static void CreateUsers(SteppeContext context)
-        {
-            if (context.Users.Any())
-                return;
-
-            var department = context.Departments.FirstOrDefault(x => x.Name == "Кухня");
-
-            var items = new List<User>
-            {
-                new User
-                {
-                    CanLogin = true,
-                    DepartmentID = department.ID,
-                    Description = "Тестовый админ",
-                    Login = "admin",
-                    FirstName = "Петр (админ)",
-                    SecondName = "Сидоров",
-                    MiddleName = "Алексеевич",
-                    Type = UserType.OrganizationEmployee,
-                    Token = Md5Helper.GetMd5Hash("admin"),
-                    Password = Base64Helper.Base64Encode("admin")
-                },
-                new User
-                {
-                    CanLogin = true,
-                    Description = "Лучший в своем деле!",
-                    Login  = "free",
-                    FirstName = "Иван",
-                    SecondName = "Иванов",
-                    MiddleName = "Иванович", 
-                    Type = UserType.Consultant,
-                    Token = Md5Helper.GetMd5Hash("free"),
-                    Password = Base64Helper.Base64Encode("free")
-                }
-            };
-
-            context.Users.AddRange(items);
             context.SaveChanges();
         }
     }

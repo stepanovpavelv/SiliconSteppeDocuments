@@ -13,11 +13,11 @@ namespace SiliconSteppeDocuments.Model
 
         public string Description { get; set; }
 
-        public User InvitedUser { get; set; }
+        public ApplicationUser InvitedUser { get; set; }
 
         public long InvitedUserID { get; set; }
 
-        public User ResponsibleUser { get; set; }
+        public ApplicationUser ResponsibleUser { get; set; }
 
         public long ResponsibleUserID { get; set; }
 

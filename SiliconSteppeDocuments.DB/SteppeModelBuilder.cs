@@ -7,6 +7,17 @@ namespace SiliconSteppeDocuments.DB
     {
         public static void OnModelCreating(ModelBuilder builder)
         {
+            // Identity roles
+            builder.Entity<ApplicationRole>().HasData(
+                    new ApplicationRole { Id = 1, Name = "Admin", NormalizedName = "ADMIN" },
+                    new ApplicationRole { Id = 2, Name = "Employee", NormalizedName = "EMPLOYEE" },
+                    new ApplicationRole { Id = 3, Name = "Consultant", NormalizedName = "CONSULTANT" }
+                );
+
+            // Application Users
+            builder.Entity<ApplicationUser>().HasOne(x => x.Department).WithMany().HasForeignKey(x => x.DepartmentID);
+            builder.Entity<ApplicationUser>().HasMany(x => x.Rates).WithOne(x => x.RateUser).HasForeignKey(x => x.RateUserID);
+
             // Organization type
             builder.Entity<OrganizationType>().ToTable("OrganizationTypes");
             builder.Entity<OrganizationType>().HasKey(x => x.ID);
@@ -21,15 +32,6 @@ namespace SiliconSteppeDocuments.DB
             builder.Entity<Department>().ToTable("Departments");
             builder.Entity<Department>().HasKey(x => x.ID);
             builder.Entity<Department>().HasOne(x => x.Organization).WithMany().HasForeignKey(x => x.OrganizationID);
-
-            // User
-            builder.Entity<User>().ToTable("Users");
-            builder.Entity<User>().HasKey(x => x.ID);
-            builder.Entity<User>().Property(x => x.FirstName).HasMaxLength(150);
-            builder.Entity<User>().Property(x => x.SecondName).HasMaxLength(150);
-            builder.Entity<User>().Property(x => x.MiddleName).HasMaxLength(150);
-            builder.Entity<User>().HasOne(x => x.Department).WithMany().HasForeignKey(x => x.DepartmentID);
-            builder.Entity<User>().HasMany(x => x.Rates).WithOne(x => x.RateUser).HasForeignKey(x => x.RateUserID);
 
             // Inspection type
             builder.Entity<InspectionType>().ToTable("InspectionTypes");
@@ -56,6 +58,7 @@ namespace SiliconSteppeDocuments.DB
             builder.Entity<QuestionnaireResult>().ToTable("QuestionnaireResults");
             builder.Entity<QuestionnaireResult>().HasKey(x => x.ID);
             builder.Entity<QuestionnaireResult>().HasOne(x => x.Questionnaire).WithMany().HasForeignKey(x => x.QuestionnaireID);
+            builder.Entity<QuestionnaireResult>().HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserID);
             builder.Entity<QuestionnaireResult>().HasMany(x => x.DetailResults).WithOne(x => x.QuestionnaireResult).HasForeignKey(x => x.QuestionnaireResultID);
 
             // Detail result

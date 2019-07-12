@@ -1,34 +1,48 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SiliconSteppeDocuments.API.Contracts;
 using SiliconSteppeDocuments.API.Models.User;
-using SiliconSteppeDocuments.DB;
+using SiliconSteppeDocuments.Model;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace SiliconSteppeDocuments.API.Controllers
 {
-    [Route("api/user")]
+    [Authorize]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly SteppeContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IConfiguration _configuration;
 
-        public UserController(SteppeContext context)
+        public UserController(UserManager<ApplicationUser> userManager, IConfiguration configuration)
         {
-            _context = context;
+            _userManager = userManager;
+            _configuration = configuration;
         }
 
-        [HttpPost]
-        public async Task<UpdateUserResponse> UpdateUser(UpdateUserRequest request)
+        [HttpGet]
+        public async Task<CurrentUserResponse> CurrentUser()
         {
-            var userModel = new UserModel(_context);
-            return await userModel.UpdateUser(request);
-        }
+            var currentUserNameClaim = HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+            var currentUser = await _userManager.FindByNameAsync(currentUserNameClaim.Value);
+            if (currentUser == null)
+            {
+                var badResponse = new CurrentUserResponse();
+                badResponse.AddMessage(Common.MessageType.Error, "User not found");
+                return badResponse;
+            }
 
-        [HttpPost("Authorize")]
-        public async Task<AuthorizeUserResponse> Authorize(AuthorizeUserRequest request)
-        {
-            var userModel = new UserModel(_context);
-            return await userModel.GetUser(request);
+            var userModel = new UserModel(null);
+            var userInfo = await userModel.GetUserInfoAsync(_userManager, currentUser);
+
+            return new CurrentUserResponse(userInfo);
         }
     }
 }
